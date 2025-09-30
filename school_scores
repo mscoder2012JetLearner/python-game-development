@@ -1,0 +1,14 @@
+
+group_details=[]
+for i in range(2):
+    group_name=input("what is the name of group")
+    people_in=input("how many people are in group")
+    date=input("what was the date of the competiton")
+    place=input("where was the compitition held")
+    prize=input("what place did they come in the competition")
+    group=(group_name,people_in,date,place,prize)
+    group_details.append(group)
+
+for i in group_details:
+  print(i)
+
