@@ -4,6 +4,7 @@ import pgzrun
 
 HEIGHT=400
 WIDTH=500
+distance=100
 
 satalites=[]
 pos_s=[]
@@ -15,9 +16,7 @@ while n<10:
     satalite=Actor("satalite")
     x=random.randint(25,475)
     y=random.randint(25,375)
-    for i in pos_s:
-        if x-i[0]<20 and y-i[1]<20:
-          continue
+
     satalite.pos=x,y
     satalites.append(satalite)
     pos_s.append(satalite)
@@ -25,26 +24,12 @@ while n<10:
 
 
 def draw():
-    screen.blit("galaxy",(0,0))
+    screen.blit("galaxy1",(0,0))
+    r=1
     for i in satalites:
         i.draw()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        screen.draw.text(str(r),(i.pos[0],i.pos[1]+20))
+        r=r+1
 
 
 pgzrun.go()
