@@ -21,7 +21,6 @@ while c<10:
 
     satalite.pos=x,y
     satalites.append(satalite)
-    pos_s.append(satalite)
     c=c+1
 
 
@@ -32,19 +31,20 @@ def draw():
         i.draw()
         screen.draw.text(str(r),(i.pos[0],i.pos[1]+20),color="yellow")
         r=r+1
-    #for i in pos_s:
-        #print(i[0])
-        #screen.draw.line(i[0],i[1],color="red")
+    for i in pos_s:
+        print(i[0])
+        screen.draw.line(i[0],i[1],color="red")
 
     
 def on_mouse_down(pos):
     global n,ns,pos_s
     if n>ns:
         if satalites[ns].collidepoint(pos):
-            if ns==True:
+            if ns:
                 pos_s.append((satalites[ns-1].pos,satalites[ns].pos))
                 print(pos_s)
             ns=ns+1
+            print(ns)
         else:
             pos_s=[]
             ns=0
