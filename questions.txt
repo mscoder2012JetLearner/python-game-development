@@ -1,0 +1,4 @@
+What is the capital of wales?,A:London,B:Cardif,C:chester,D:Wrexham,2
+What is the largest continent?,A:North America,B:South America,C:Africa,D:Asia,4
+What is the largest river in the world?, A:The amazon river,B:The river nile,C:The tems,D:mississippi,2
+What is the biggest ocean in the world?, A: The pesific, B: The atlantic, C: The Indain Ocean, D: Artic,1 
