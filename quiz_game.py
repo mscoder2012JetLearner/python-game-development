@@ -48,6 +48,11 @@ def draw():
     screen.draw.textbox("Welcome to Quizz master!",intro_box,color="white")
     screen.draw.textbox("Skip",skip_box,color="white",angle=90,shadow=(0.5,0.5))
     screen.draw.textbox(str(time),timer_box,color="white",shadow=(0.5,0.5))
+    screen.draw.textbox(Q[0],question_box,color="white",shadow=(0.5,0.5))
+    screen.draw.textbox(Q[1],answer_box1,color="white",shadow=(0.5,0.5))
+    screen.draw.textbox(Q[2],answer_box2,color="white",shadow=(0.5,0.5))
+    screen.draw.textbox(Q[3],answer_box3,color="white",shadow=(0.5,0.5))
+    screen.draw.textbox(Q[4],answer_box4,color="white",shadow=(0.5,0.5))
 
 def update():
     intro_box.x-=2
@@ -61,21 +66,30 @@ def time_update():
 clock.schedule_interval(time_update,1)
 
 
+file_storage="C:/Users/31mschwarz/OneDrive - Abbey Gate College/Documents and subjects/python game developer/questions.txt"
+list_of_questions=[]
 
+def question_reader():
+    global list_of_questions
+    open_file=open(file_storage,"r")
+    for i in open_file:
+        list_of_questions.append(i)
+    open_file.close()
+def read_question():
+    random.shuffle(list_of_questions)
+    return list_of_questions.pop(0).split(",")
+question_reader()
+Q=read_question()
+print(Q)
+
+
+def on_mouse_down(pos):
+    
+    
+    
+    
 
 
 
    
-
-
-
-
-
-
-
-
-
-
-
-
 pgzrun.go()

@@ -1,4 +1,8 @@
-What is the capital of wales?,A:London,B:Cardif,C:chester,D:Wrexham,2
-What is the largest continent?,A:North America,B:South America,C:Africa,D:Asia,4
-What is the largest river in the world?, A:The amazon river,B:The river nile,C:The tems,D:mississippi,2
-What is the biggest ocean in the world?, A: The pesific, B: The atlantic, C: The Indain Ocean, D: Artic,1 
+What is the capital of wales?,London,Cardif,chester,Wrexham,2
+What is the largest continent?,North America,South America,Africa,Asia,4
+What is the largest river in the world?,The amazon river,The river nile,The tems,mississippi,2
+What is the biggest ocean in the world?,The pacific,The atlantic,The Indain Ocean,Artic,1 
+what is the most common eye colour?,Blue,Green,brown,grey,3
+what is the most common hair colour?,brown,blonde,red,black,4
+what is the heighest mountain on earth?,K2,the atlas mountains,mount everest,Kangchenjunga,3
+what is the most popular sport in the world?,football,rugby,baseball,basketball,1
