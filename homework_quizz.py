@@ -32,6 +32,8 @@ skip_box.move_ip(675,270)
 intro_box=Rect(0,0,755,100)
 intro_box.move_ip(20,20)
 
+answer_boxs=[answer_box1,answer_box2,answer_box3,answer_box4]
+
 def draw():
     screen.fill(color="black")
     screen.draw.filled_rect(answer_box1,"white")
@@ -51,6 +53,7 @@ def draw():
     screen.draw.textbox(Q[3],answer_box3,color="black",shadow=(0.5,0.5),scolor="light gray")
     screen.draw.textbox(Q[4],answer_box4,color="black",shadow=(0.5,0.5),scolor="light gray")
 
+
 def update():
     intro_box.x-=2
     if intro_box.right<0:
@@ -62,7 +65,8 @@ def time_update():
         time=0
 clock.schedule_interval(time_update,1)
 
-file_storage="C:/Users/31mschwarz/OneDrive - Abbey Gate College/Documents and subjects/python game developer/questions.txt"
+
+file_storage="C:/Users/31mschwarz/OneDrive - Abbey Gate College/Documents and subjects/python game developer/questions1.txt"
 list_of_questions=[]
 
 def question_reader():
@@ -77,9 +81,35 @@ def read_question():
 question_reader()
 Q=read_question()
 print(Q)
+
+
 def on_mouse_down(pos):
-    pass
+    index_value=1
+    for i in answer_boxs:
+        if i.collidepoint(pos):
+            if index_value==int(Q[5]):
+                correct()
+            else:
+                wrong()
+        index_value=index_value+1
+    if skip_box.collidepoint(pos):
+        skip()
+
+def correct():
+    global Q
+    global time
+    if list_of_questions:
+        Q=read_question()
+        time=10
+    else:
+        wrong()
+
+def wrong():
+    global Q,time
+    message="Game Over!"
+    Q=[message,"_","_","_","_","1"]
+    time=0
 
 
-    
+
 pgzrun.go()

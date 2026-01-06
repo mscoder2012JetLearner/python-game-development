@@ -1,0 +1,7 @@
+How many days are in a normal year?,365,360,265,255,1
+How many days are in a weak?,5,3,7,6,3
+How many minutes in a year?,525600,1000000,500000,653484,1
+What is the most common flag colour?,white,red,green,yellow,2
+What is the rarest hair colour?,red/ginger,black,brown,blonde,1
+What two numbers are used in binary?,1 and 2,2 and3,0 and 1,0 and 2,3
+What is the least common flag colour?,pink,gold,black,purple,4
