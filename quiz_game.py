@@ -6,6 +6,7 @@ os.environ['SDL_VIDEO_CENTERED']='1'
 time=10
 HEIGHT=670
 WIDTH=870
+score=0
 
 TITLE="quiz game"
 
@@ -99,6 +100,8 @@ def on_mouse_down(pos):
 def correct():
     global Q
     global time
+    global score
+    score=score+1
     if list_of_questions:
         Q=read_question()
         time=10
@@ -107,10 +110,17 @@ def correct():
 
 def wrong():
     global Q,time
-    message="Game Over!"
-    Q=[message,"_","_","_","_","1"]
+    message="Game Over! Your Score is "+str(score)
+    Q=[message,"_","_","_","_","0"]
     time=0
 
+def skip():
+    global Q,time
+    if list_of_questions:
+       Q=read_question()
+       time=10
+    else:
+        wrong()
 
 
 pgzrun.go()
