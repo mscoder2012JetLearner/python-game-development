@@ -1,0 +1,41 @@
+import time
+import random
+import pgzrun
+import os
+
+os.environ["SDL_VIDEO_CENTERED"]="1"
+HEIGHT=444
+WIDTH=700
+
+alien=Actor("space alien")
+alien.pos=(350,50)
+
+ship=Actor("ship")
+ship.pos=(350,400)
+
+bullets=[]
+
+def draw():
+    screen.blit("space invaders bg",(0,0))
+    alien.draw()
+    ship.draw()
+    for i in bullets:
+        i.draw()
+
+def on_key_down(key):
+    if key==keys.SPACE:
+        bullet=Actor("bullet")
+        bullets.append(bullet)
+        bullet.pos=(ship.x,ship.y-45)
+def update():
+    if keyboard.right:
+        ship.x=ship.x+10
+    elif keyboard.left:
+        ship.x=ship.x-10
+    for i in bullets:
+       i.y=i.y-5
+    
+    
+
+
+pgzrun.go()
